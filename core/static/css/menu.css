@@ -1,0 +1,268 @@
+
+   @import url('https://fonts.googleapis.com/css?family=Khand');
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body{
+    background-image: url("../images/fundo.png");
+    color: #f2f2f2;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* ---------------- CONTAINER ---------------- */
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+/* ---------------- HERO ---------------- */
+.home{
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------------- TOP NAV ---------------- */
+.top-nav{
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+}
+
+.top-nav a{
+    color: #f2f2f2;
+    font-family: 'Khand', sans-serif;
+    display: block;
+}
+
+.top-nav a img{
+    margin-top: -15px;
+}
+
+/* ---------------- MAIN LAYOUT ---------------- */
+.content-menu{
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+/* ---------------- SIDEBAR ---------------- */
+.aside-float{
+    width: 220px;
+    text-align: right;
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+.nav-side{
+    position: sticky;
+    top: 20px;
+}
+
+.nav-side a{
+    color: #f2f2f2;
+    font-size: 1.2em;
+    display: block;
+    padding: 10px;
+}
+
+.nav-side img{
+    vertical-align: middle;
+    padding-left: 10px;
+}
+
+/* ---------------- CONTENT ---------------- */
+.content-side{
+    border-left: #f2f2f2 2px solid;
+    width: 100%;
+}
+
+.items{
+    width: 100%;
+    padding: 25px 0 0 10px;
+}
+
+.menu-items{
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: #f2f2f2 2px dotted;
+    font-size: 1.3em;
+}
+
+.food{
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.price{
+    white-space: nowrap;
+}
+
+/* ---------------- HEADERS ---------------- */
+.header1{
+    background-size: cover;
+}
+
+.header2{
+    background-image: url("../images/c_momo.jpg");
+    background-size: cover;
+}
+
+.header3{
+    background-image: url("../images/chicken_fried.jpg");
+    background-size: cover;
+}
+
+.h1{
+    font-size: 4.5em;
+    text-align: center;
+    border-top: #f2f2f2 2px solid;
+    border-bottom: #f2f2f2 2px solid;
+}
+
+section h1{
+    color: #f2f2f2;
+    font-size: 3.5em;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(37, 28, 15, 0.534);
+}
+
+/* ---------------- FOOTER ---------------- */
+footer{
+    padding-top: 60px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+footer p{
+    margin: 0;
+    font-size: 1.2em;
+}
+
+footer img{
+    width: 50px;
+    height: 50px;
+    padding: 0 5px;
+}
+
+/* ================================================= */
+/* ================= RESPONSIVE ==================== */
+/* ================================================= */
+
+/* -------- TABLET -------- */
+@media (max-width: 992px){
+
+    .content-menu{
+        flex-direction: column;
+    }
+
+    .aside-float{
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-side{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        position: relative;
+    }
+
+    .content-side{
+        border-left: none;
+    }
+
+    .h1{
+        font-size: 3.2em;
+    }
+
+    section h1{
+        font-size: 2.5em;
+    }
+}
+
+/* -------- MOBILE -------- */
+@media (max-width: 768px){
+
+    .home{
+        height: 70vh;
+    }
+
+    .top-nav{
+        font-size: 1.3em;
+        width: 100%;
+    }
+
+    .item{
+        font-size: 1.1em;
+    }
+
+    .food{
+        max-width: 65%;
+    }
+
+    footer img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* -------- SMALL MOBILE -------- */
+@media (max-width: 480px){
+
+    .home{
+        height: 60vh;
+    }
+
+    .top-nav{
+        font-size: 1.1em;
+    }
+
+    .item{
+        font-size: 1em;
+    }
+
+    .h1{
+        font-size: 2.5em;
+    }
+
+    section h1{
+        font-size: 2em;
+    }
+
+    footer p{
+        font-size: 1em;
+    }
+}
+

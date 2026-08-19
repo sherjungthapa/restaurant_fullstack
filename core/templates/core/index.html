@@ -1,0 +1,430 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+{% load static %}
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6 col-md-12">
+            <div class="hero-content">
+               <span class="hero-subtitle">Authentic Nepalese Cuisine</span>
+               <h1 class="hero-title">
+                  <span class="text-orange">M</span>outhwatering<br>
+                  <span class="text-orange">M</span>omos<br>
+                  Made with Love
+               </h1>
+               <p class="hero-description">
+                  Experience the authentic taste of Nepal through our handcrafted momos. Made daily with fresh,
+                  locally-sourced ingredients and traditional family recipes passed down through generations.
+               </p>
+               <div class="hero-buttons">
+                  <a href="#menu" class="btn btn-primary">
+                     <i class="fas fa-utensils me-2"></i>View Menu
+                  </a>
+                  <a href="#contact" class="btn btn-outline">
+                     <i class="fas fa-map-marker-alt me-2"></i>Visit Us
+                  </a>
+               </div>
+
+               <!-- Quick Stats -->
+               <div class="hero-stats mt-5">
+                  <div class="row">
+                     <div class="col-4">
+                        <div class="stat-item">
+                           <h3>50+</h3>
+                           <p>Menu Items</p>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <div class="stat-item">
+                           <h3>15+</h3>
+                           <p>Years Experience</p>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <div class="stat-item">
+                           <h3>5000+</h3>
+                           <p>Happy Customers</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-12">
+            <div class="hero-image">
+               <img src="{% static 'images/mo_mo.png' %}" alt="Delicious momos platter" class="img-fluid">
+               <div class="floating-badge">
+                  <span>🔥</span>
+                  <small>Most Ordered</small>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section section-padding">
+   <div class="container" data-aos="zoom-in-down" data-aos-duration="2000">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Our Story</span>
+         <h2 class="section-title">Why Choose <span class="text-orange">M</span>OMOS?</h2>
+         <p class="section-description">Bringing authentic Nepalese flavors to your table since 2008</p>
+      </div>
+
+      <div class="row align-items-center">
+         <div class="col-lg-6 col-md-12">
+            <div class="about-image-wrapper">
+               <img src="{% static 'images/eating.jpg' %}" alt="Chef preparing momos" class="about-image img-fluid">
+               <div class="experience-badge">
+                  <span>15+</span>
+                  <small>Years Experience</small>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-12">
+            <div class="about-content">
+               <h3 class="about-heading">Tradition Meets Innovation</h3>
+               <p class="about-text">
+                  At <strong>MOMOS Restaurant</strong>, we blend traditional Nepalese cooking techniques with
+                  modern culinary innovation. Our chefs, trained in the art of momo-making from Kathmandu,
+                  bring you an authentic taste that transports you straight to the Himalayas.
+               </p>
+
+               <!-- Features List -->
+               <div class="features-list">
+                  <div class="feature-item">
+                     <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                     </div>
+                     <div class="feature-content">
+                        <h5>Fresh Ingredients</h5>
+                        <p>Daily sourced vegetables and premium meats</p>
+                     </div>
+                  </div>
+
+                  <div class="feature-item">
+                     <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                     </div>
+                     <div class="feature-content">
+                        <h5>Made Fresh Daily</h5>
+                        <p>Prepared to order, never frozen</p>
+                     </div>
+                  </div>
+
+                  <div class="feature-item">
+                     <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                     </div>
+                     <div class="feature-content">
+                        <h5>Family Recipes</h5>
+                        <p>Secret recipes passed through generations</p>
+                     </div>
+                  </div>
+               </div>
+
+               <a href="{% url 'contact' %}" class="btn btn-primary mt-4">
+                  <i class="fas fa-calendar-alt me-2"></i>Book a Table
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="services-section section-padding">
+   <div class="container" data-aos="zoom-in-down" data-aos-duration="2000">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Our Services</span>
+         <h2 class="section-title text-white opacity-50">More Than Just <span class="text-orange">M</span>omos</h2>
+         <p class="section-description">Complete dining experience for every occasion</p>
+      </div>
+
+      <div class="row">
+         <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card">
+               <div class="service-icon">
+                  <i class="fas fa-store"></i>
+               </div>
+               <h3>Dine-In Experience</h3>
+               <p>Enjoy our cozy ambiance with authentic Nepalese decor and warm hospitality</p>
+               <ul class="service-features">
+                  <li><i class="fas fa-check"></i> Comfortable seating</li>
+                  <li><i class="fas fa-check"></i> Family-friendly</li>
+                  <li><i class="fas fa-check"></i> Free WiFi</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card">
+               <div class="service-icon">
+                  <i class="fas fa-truck"></i>
+               </div>
+               <h3>Takeaway & Delivery</h3>
+               <p>Get your favorite momos delivered hot and fresh to your doorstep</p>
+               <ul class="service-features">
+                  <li><i class="fas fa-check"></i> Online ordering</li>
+                  <li><i class="fas fa-check"></i> Quick delivery</li>
+                  <li><i class="fas fa-check"></i> Contactless payment</li>
+               </ul>
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-6 mb-4">
+            <div class="service-card">
+               <div class="service-icon">
+                  <i class="fas fa-utensils"></i>
+               </div>
+               <h3>Catering Services</h3>
+               <p>Make your events memorable with our professional catering services</p>
+               <ul class="service-features">
+                  <li><i class="fas fa-check"></i> Custom menus</li>
+                  <li><i class="fas fa-check"></i> Event planning</li>
+                  <li><i class="fas fa-check"></i> Setup & serving</li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Menu Section -->
+<section id="menu" class="menu-section section-padding" >
+   <div class="container" data-aos="zoom-in-up" data-aos-duration="3000">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Our Specialties</span>
+         <h2 class="section-title">Explore Our <span class="text-orange">M</span>enu</h2>
+         <p class="section-description">Handcrafted with love, served with perfection</p>
+      </div>
+
+      <!-- Menu Categories -->
+      <div class="menu-categories mb-5">
+         <a href="?category=all#menu"><button class="category-btn 
+         {% if request.GET.category == 'all' %}
+         active        
+         {% endif %}
+             ">All Items</button></a>
+         {% for i in category  %}
+            <a href="?category={{i.id}}#menu"><button  class="category-btn {% if request.GET.category == i.id|stringformat:'s' %} active {% endif %}">{{i.title}} Momo</button></a>
+       
+         {% endfor %}
+         
+        
+      </div>
+
+      <!-- Menu Items Grid -->
+      
+         
+       
+      <div class="row menu-grid">
+          {% for i in momo  %}
+        
+         <div class="col-lg-4 col-md-6 menu-item" data-category="buff">
+            <div class="menu-card">
+               <div class="menu-image">
+                  <img src="{{i.image.url}}" alt="Buff Steam Momo" >
+                  <span class="menu-badge">Best Seller</span>
+               </div>
+               <div class="menu-content">
+                  <div class="menu-header">
+                     <h4>{{i.name}}</h4>
+                     <span class="menu-price">{{i.price}}</span>
+                  </div>
+                  <p>{{i.desc}}</p>
+                  <div class="menu-footer">
+                     <span class="menu-tag"><i class="fas fa-fire"></i> Spicy</span>
+                     <span class="menu-tag"><i class="fas fa-clock"></i> 15 mins</span>
+                     <button class="add-to-cart" data-item="Buff Steam Momo" data-price="120">
+                        <i class="fas fa-plus"></i> Add
+                     </button>
+                  </div>
+               </div>
+            </div>     
+         </div>
+          {% empty %}
+        <p class="alert alert-danger text-center">No Item</p>
+         {% endfor %}
+         
+
+      
+         <!-- Add more menu items as needed -->
+      </div>
+
+      <!-- Order Now CTA -->
+      <div class="text-center mt-5">
+         <a href="" class="btn btn-primary btn-lg">
+            <i class="fas fa-phone-alt me-2"></i> Call to Order: +977 9816107823
+         </a>
+      </div>
+   </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials-section section-padding">
+   <div class="container" data-aos="zoom-in-down" data-aos-duration="2000">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Happy Customers</span>
+         <h2 class="section-title">What Our Customers <span class="text-orange">S</span>ay</h2>
+         <p class="section-description">Don't just take our word for it</p>
+      </div>
+
+      <div class="testimonials-slider owl-carousel">
+         <!-- Testimonial 1 -->
+         <div class="testimonial-item">
+            <div class="testimonial-content">
+               <div class="rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+               </div>
+               <p class="testimonial-text">
+                  "The best momos I've had outside Nepal! The flavors are authentic and the service is excellent."
+               </p>
+            </div>
+            <div class="testimonial-author">
+               <img src="{% static 'images/cook.jpeg' %}" alt="Sujan Thadarai">
+               <div>
+                  <h5>Sujan Thadarai</h5>
+                  <span>Regular Customer</span>
+               </div>
+            </div>
+         </div>
+
+         <!-- Add more testimonials -->
+      </div>
+   </div>
+</section>
+
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section id="contact" class="contact-section section-padding">
+   <div class="container" data-aos="zoom-in-down" data-aos-duration="1000">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Contact Us</span>
+         <h2 class="section-title">Get in <span class="text-orange">T</span>ouch</h2>
+         <p class="section-description">We'd love to hear from you. Visit us or send us a message.</p>
+      </div>
+
+      <div class="row g-4">
+         <!-- Contact Form -->
+         <div class="col-lg-6 col-md-12">
+            <div class="contact-form-wrapper">
+               <h3 class="mb-4">Send us a Message</h3>
+               <form class="contact-form" method="post" action="{% url 'index' %} " id="contactForm">
+                  {% csrf_token %}
+                  <div class="row g-3">
+                     <div class="col-md-6">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                     </div>
+                     <div class="col-md-6">
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone Number" required>
+                        <span id="error_msg" style="color: red; display: none;">Invalid Phone Number</span>
+                     </div>
+                     <div class="col-12">
+                        <input type="email" name="email" class="form-control" placeholder="Email Address">
+                     </div>
+                     <div class="col-12">
+                        <textarea class="form-control" name="message" rows="6" placeholder="Your Message"></textarea>
+                     </div>
+                     <div class="col-12">
+                        <button type="submit" id="btn" class="btn btn-primary w-100">
+                           <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+
+         <!-- Contact Info -->
+         <div class="col-lg-6 col-md-12">
+            <div class="contact-info-wrapper">
+               <h3 class="mb-4">Visit Our Restaurant</h3>
+
+               <div class="contact-info">
+                  <div class="info-item">
+                     <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                     </div>
+                     <div class="info-content">
+                        <h5>Address</h5>
+                        <p>Gajaharkot-2, Tanahun, Nepal</p>
+                     </div>
+                  </div>
+
+                  <div class="info-item">
+                     <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                     </div>
+                     <div class="info-content">
+                        <h5>Phone</h5>
+                        <p>+977 9816647153</p>
+                        <p>+977 1 "1234567"</p>
+                     </div>
+                  </div>
+
+                  <div class="info-item">
+                     <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                     </div>
+                     <div class="info-content">
+                        <h5>Email</h5>
+                        <p>info@momosrestaurant.com</p>
+                        <p>orders@momosrestaurant.com</p>
+                     </div>
+                  </div>
+
+                  <div class="info-item">
+                     <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                     </div>
+                     <div class="info-content">
+                        <h5>Opening Hours</h5>
+                        <p><strong>Sun-Thu:</strong> 10:00 AM - 10:00 PM</p>
+                        <p><strong>Fri-Sat:</strong> 10:00 AM - 11:00 PM</p>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- Map -->
+               <div class="mt-4">
+                  <div class="map-responsive">
+                     <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14127.45802872326!2d85.3429805871582!3d27.721469400000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bda4a951f0f%3A0x3ddabb234891c3bd!2sBuddha%20Stupa!5e0!3m2!1sen!2snp!4v1713623524286!5m2!1sen!2snp"
+                        width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                     </iframe>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+{% endblock content %}
+
+{% block extrajs %}
+
+{% if messages %}
+{% for message in messages  %}
+<script> alertify.set('notifier', 'position', 'top-right');
+   alertify.success('{{message}}');</script>
+  
+{% endfor %}
+   
+{% endif %}
+   
+{% endblock extrajs %}

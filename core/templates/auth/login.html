@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <!-- bootstrap link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- fontawsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css">
+    <style>
+        .cross {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .cross:hover {
+            scale: 1.2;
+            color: black
+        }
+    </style>
+</head>
+
+<body>
+    <div class="">
+        <div class="container min-vih-100 d-flex align-item-center py-5">
+            <div class="row w-100 bg-white shadow-lg rounded-4">
+                <div
+                    class="col-lg-6 text-white p-5 bg-dark d-flex justify-content-center align-items-center flex-column">
+                    <h1 class="fw-bold mb-3"> {{name}} Welcome To Our App</h1>
+                    <p class="text-white-50">Create a user account to get full access</p>
+                    <img src="{% static 'images/back.jpg' %}" class="img-fluid rounded-4 shadow"
+                        style="max-height: 350px; object-fit: cover;">
+                </div>
+                <div class="col-lg-6">
+                    <div class="main">
+                        <!-- From Uiverse.io by Yaya12085 -->
+                        <form class="form" method="post" action="{% url 'log_in' %}">
+                            {% csrf_token %}
+                            <a href="{% url 'index' %}">
+                                <h3 class="cross"><i class="fa-solid fa-xmark"></i></h3>
+                            </a>
+                            <p class="title">Login </p>
+                            <p class="message">Login now and get full access to our app. </p>
+                            <label>
+                                
+                                <span>UserName</span><br><input required="" placeholder="" name="username" type="text" class="input">
+                                
+                            </label>
+                            <div class="password-box">
+                                <span>Password</span><br><input required="" placeholder="" id="password" name="password" type="password" class="input">
+                                
+                                <button type="button" id="togglePassword">👁</button>
+                            </div>
+                            <div>
+                                <a href="{% url 'password_reset' %}" style="float: fight;">Forgot Pssword?</a>
+                            </div>
+                            <input type="hidden" value="{{next}}" name="next">
+                            <div>
+                                <input type="checkbox" name="remember_me">
+                                <label for="">remember_me</label>
+                            </div>
+
+                            <button class="submit">Login</button>
+                            <p class="signin">do not have an acount ? <a href="{% url 'register' %}">Signup</a> </p>
+                        </form>
+                        <div class="d-flex justify-content-center gap-2" >
+                            <form method="post" action="{% url 'social:begin' 'google-oauth2' %}">
+                                {% csrf_token %}
+                                 <button class="btn btn-outline-warning" tiltle="continue witht google"><i class="fa-brands fa-google"></i></button>
+                            </form>
+
+                            <form method="post" action="{% url 'social:begin' 'github' %}">
+                                {% csrf_token %}
+                                 <button class="btn btn-outline-dark" tiltle="continue witht github"><i class="fa-brands fa-github"></i></button>
+                            </form>
+                            <form method="post" action="{% url 'social:begin' 'facebook' %}">
+                                {% csrf_token %}
+                                 <button class="btn btn-outline-primary" tiltle="continue witht google"><i class="fa-brands fa-facebook"></i></button>
+                            </form>
+
+                            <!-- <a href="" class="btn btn-outline-dark" tiltle="continue witht github"><i class="fa-brands fa-github"></i></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- js script end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+    {% if messages %}
+    {% for message in messages %}
+    {% if message.tags == 'success' %}
+    <script> alertify.set('notifier', 'position', 'top-right');
+        alertify.success('{{message}}');
+    </script>
+    {% else %}
+    <script> alertify.set('notifier', 'position', 'top-right');
+        alertify.error('{{message}}');
+    </script>
+    {% endif %}
+
+
+    {% endfor %}
+
+    {% endif %}
+    <script>
+        const password = document.getElementById('password')
+        const togglePassword = document.getElementById('togglePassword')
+
+        togglePassword.addEventListener("click",function(){
+            if (password.type == 'password') {
+                password.type = "text";
+                togglePassword.textContent ="👁"
+            }else{
+                password.type = "password";
+                togglePassword.textContent ="👁"
+            }
+        })
+    </script>
+</body>
+
+</html>

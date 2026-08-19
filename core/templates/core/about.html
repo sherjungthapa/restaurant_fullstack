@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock css %}
+{% block content %}
+ <!-- About Hero Section -->
+   <section class="about-hero" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+         <div class="about-hero-content">
+            <h1>Our <span class="text-orange">Story</span> & <span class="text-orange">Journey</span></h1>
+            <p>Bringing authentic Nepalese flavors to your table since 2008. Discover the passion behind every momo we serve.</p>
+            <a href="#story" class="btn btn-primary">
+               <i class="fas fa-arrow-down me-2"></i>Explore Our Story
+            </a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Our Story Section -->
+   <section id="story" class="story-section" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+         <div class="section-header text-center mb-5">
+            <span class="section-subtitle">Our Journey</span>
+            <h2 class="section-title">The <span class="text-orange">M</span>OMOS Story</h2>
+            <p class="section-description">From a small family kitchen to your favorite momo restaurant</p>
+         </div>
+         
+         <div class="row">
+            <div class="col-lg-6 col-md-12 mb-4">
+               <div class="story-card" data-aos="fade-right" data-aos-delay="200">
+                  <div class="story-image">
+                     <img src="{% static 'images/cook1.jpg' %}" alt="Our Humble Beginnings">
+                  </div>
+                  <div class="story-content">
+                     <h3>Humble Beginnings</h3>
+                     <p>It all started in 2008 in a small kitchen in Kathmandu. Our founder, inspired by generations of family recipes, began serving momos to neighbors and friends. The authentic taste and traditional cooking methods quickly made us a local favorite.</p>
+                     <p>What began as a passion project soon turned into a mission to share the authentic taste of Nepal with the world.</p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="col-lg-6 col-md-12 mb-4">
+               <div class="story-card" data-aos="fade-left" data-aos-delay="200">
+                  <div class="story-image">
+                     <img src="{% static 'images/suraj.jpg' %}" alt="Our Growth Journey">
+                  </div>
+                  <div class="story-content">
+                     <h3>Growing Together</h3>
+                     <p>As word spread about our authentic momos, we grew from a small kitchen to a beloved restaurant. Each expansion was guided by our core values: quality, authenticity, and customer satisfaction.</p>
+                     <p>Today, we continue to serve the same authentic recipes, now enjoyed by thousands of customers who have become part of our extended family.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <div class="text-center mt-5">
+            <a href="contact.html" class="btn btn-primary">
+               <i class="fas fa-calendar-alt me-2"></i>Visit Our Restaurant
+            </a>
+         </div>
+      </div>
+   </section>
+
+   <!-- Our Values Section -->
+   <section class="values-section" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+         <div class="section-header text-center mb-5">
+            <span class="section-subtitle">What Drives Us</span>
+            <h2 class="section-title">Our Core <span class="text-orange">Values</span></h2>
+            <p class="section-description">The principles that guide every momo we make</p>
+         </div>
+         
+         <div class="row">
+            <div class="col-lg-3 col-md-6">
+               <div class="value-item" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="value-icon">
+                     <i class="fas fa-seedling"></i>
+                  </div>
+                  <h4>Fresh Ingredients</h4>
+                  <p>We source only the freshest vegetables and premium meats daily, ensuring every bite is packed with flavor and nutrition.</p>
+               </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+               <div class="value-item" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="value-icon">
+                     <i class="fas fa-history"></i>
+                  </div>
+                  <h4>Traditional Recipes</h4>
+                  <p>Our recipes are passed down through generations, preserving the authentic taste of Nepalese momos.</p>
+               </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+               <div class="value-item" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="value-icon">
+                     <i class="fas fa-heart"></i>
+                  </div>
+                  <h4>Made with Love</h4>
+                  <p>Every momo is handcrafted with care and passion, ensuring quality and taste in every single piece.</p>
+               </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+               <div class="value-item" data-aos="zoom-in" data-aos-delay="400">
+                  <div class="value-icon">
+                     <i class="fas fa-users"></i>
+                  </div>
+                  <h4>Community Focus</h4>
+                  <p>We believe in giving back to our community and creating a welcoming space for everyone to enjoy.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Milestones Section -->
+   <section class="milestones-section" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+         <div class="section-header text-center mb-5">
+            <h2 class="section-title">Our <span class="text-orange">Milestones</span></h2>
+            <p class="section-description">Celebrating years of serving authentic Nepalese cuisine</p>
+         </div>
+         
+         <div class="row">
+            <div class="col-lg-3 col-md-6">
+               <div class="milestone-item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="milestone-number">15+</div>
+                  <div class="milestone-text">Years Experience</div>
+               </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+               <div class="milestone-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="milestone-number">50K+</div>
+                  <div class="milestone-text">Happy Customers</div>
+               </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+               <div class="milestone-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="milestone-number">100+</div>
+                  <div class="milestone-text">Menu Items</div>
+               </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+               <div class="milestone-item" data-aos="fade-up" data-aos-delay="400">
+                  <div class="milestone-number">5K+</div>
+                  <div class="milestone-text">Catering Events</div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- Mission Section -->
+   <section class="mission-section" data-aos="fade-up" data-aos-duration="1000">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-lg-8">
+               <div class="mission-content text-center">
+                  <div class="mission-icon">
+                     <i class="fas fa-bullseye"></i>
+                  </div>
+                  <h3>Our Mission</h3>
+                  <p>To bring authentic Nepalese flavors to every table, creating memorable dining experiences through traditional recipes, fresh ingredients, and warm hospitality. We strive to be more than just a restaurant - we aim to be a bridge between cultures, sharing the rich culinary heritage of Nepal with food lovers everywhere.</p>
+                  <p>Every momo we serve carries our commitment to quality, authenticity, and the joy of sharing good food with good people.</p>
+                  <a href="menu.html" class="btn btn-primary mt-3">
+                     <i class="fas fa-utensils me-2"></i>Explore Our Menu
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+ 
+{% endblock content %}

@@ -1,0 +1,80 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#f4f6f8; font-family:Arial, Helvetica, sans-serif;">
+
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f6f8; padding:40px 15px;">
+        <tr>
+            <td align="center">
+
+                <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                       style="max-width:520px; background:#ffffff; border-radius:12px; overflow:hidden;">
+
+                    <!-- Header -->
+                    <tr>
+                        <td style="background:#111827; padding:28px 30px; text-align:center;">
+                            <h1 style="margin:0; color:#ffffff; font-size:24px; font-weight:600;">
+                                Password Reset
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding:40px 35px; text-align:center;">
+
+                            <h2 style="margin:0 0 15px; color:#111827; font-size:22px;">
+                                Reset your password
+                            </h2>
+
+                            <p style="margin:0 0 30px; color:#6b7280; font-size:15px; line-height:1.6;">
+                                We received a request to change your password.
+                                Click the button below to create a new password.
+                            </p>
+
+                            <!-- Button -->
+                            <a href="{{ protocol }}://{{ domain }}{% url 'password_reset_confirm' uidb64=uid token=token %}"
+                               style="
+                                    display:inline-block;
+                                    background:#2563eb;
+                                    color:#ffffff;
+                                    text-decoration:none;
+                                    padding:13px 26px;
+                                    border-radius:7px;
+                                    font-size:15px;
+                                    font-weight:bold;
+                               ">
+                                Reset Password
+                            </a>
+
+                            <p style="margin:30px 0 0; color:#9ca3af; font-size:13px; line-height:1.5;">
+                                If you didn't request a password reset, you can safely ignore this email.
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="padding:20px 30px; background:#f9fafb; text-align:center;">
+                            <p style="margin:0; color:#9ca3af; font-size:12px;">
+                                This is an automated email. Please do not reply.
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+```

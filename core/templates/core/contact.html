@@ -1,0 +1,584 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock css %}
+{% block content %}
+
+<!-- Contact Hero -->
+<section class="contact-hero hero-section">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6 col-md-12">
+            <div class="hero-content">
+               <span class="hero-subtitle">Get in Touch</span>
+               <h1 class="hero-title">
+                  We're Here to<br>
+                  <span class="text-orange">S</span>erve You
+               </h1>
+               <p class="hero-description">
+                  Have questions, feedback, or want to make a reservation? 
+                  We're just a message or call away. Our team is ready to assist you 
+                  with all your dining needs.
+               </p>
+               
+               <!-- Quick Contact Info -->
+               <div class="quick-contact mt-4">
+                  <div class="quick-contact-item">
+                     <i class="fas fa-phone-alt"></i>
+                     <div>
+                        <h6>Call Us</h6>
+                        <a href="">+977 9816107823</a>
+                     </div>
+                  </div>
+                  <div class="quick-contact-item">
+                     <i class="fas fa-envelope"></i>
+                     <div>
+                        <h6>Email Us</h6>
+                        <a href="">info@momosrestaurant.com</a>
+                     </div>
+                  </div>
+                  <div class="quick-contact-item">
+                     <i class="fas fa-clock"></i>
+                     <div>
+                        <h6>Opening Hours</h6>
+                        <p>10:00 AM - 10:00 PM (Mon-Sun)</p>
+                     </div>
+                  </div>
+               </div>
+               
+               <div class="hero-buttons mt-4">
+                  <a href="#reservation" class="btn btn-primary">
+                     <i class="fas fa-calendar-alt me-2"></i>Book a Table
+                  </a>
+                  <a href="" target="_blank" class="btn btn-success">
+                     <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+                  </a>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-12">
+            <div class="hero-image">
+               <img src="{% static 'images/mo_mo.png' %}" alt="Contact us at MOMOS Restaurant" class="img-fluid">
+               <div class="floating-badge">
+                  <span>⏰</span>
+                  <small>Open Now</small>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Contact Information -->
+<section class="contact-info-section section-padding bg-light">
+   <div class="container">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Contact Options</span>
+         <h2 class="section-title">Multiple Ways to <span class="text-orange">C</span>onnect</h2>
+         <p class="section-description">Choose your preferred way to reach us</p>
+      </div>
+      
+      <div class="row g-4">
+         <!-- Visit Us -->
+         <div class="col-lg-4 col-md-6">
+            <div class="contact-method-card">
+               <div class="method-icon">
+                  <i class="fas fa-store"></i>
+               </div>
+               <h3>Visit Our Restaurant</h3>
+               <p>Experience our cozy ambiance and authentic Nepalese hospitality</p>
+               <div class="method-details">
+                  <p><strong>Address:</strong> Vyas-8, Tanahun, Nepal</p>
+                  <p><strong>Landmark:</strong> Near Buddha Stupa, Opposite City Mall</p>
+               </div>
+               <a href="#location" class="method-link">
+                  <i class="fas fa-map-marker-alt me-2"></i>Get Directions
+               </a>
+            </div>
+         </div>
+         
+         <!-- Call Us -->
+         <div class="col-lg-4 col-md-6">
+            <div class="contact-method-card">
+               <div class="method-icon">
+                  <i class="fas fa-phone-volume"></i>
+               </div>
+               <h3>Call Us Directly</h3>
+               <p>Speak with our friendly staff for reservations and inquiries</p>
+               <div class="method-details">
+                  <p><strong>Main Line:</strong> +977 9816107823</p>
+                  <p><strong>Reservations:</strong> +977 1-2345678</p>
+                  <p><strong>Takeaway:</strong> +977 1-2345679</p>
+               </div>
+               <div class="method-actions">
+                  <a href="" class="btn btn-outline btn-sm me-2">
+                     <i class="fas fa-phone-alt"></i> Call Now
+                  </a>
+                  <a href="" class="btn btn-primary btn-sm">
+                     <i class="fas fa-shopping-cart"></i> Order by Phone
+                  </a>
+               </div>
+            </div>
+         </div>
+         
+         <!-- Email Us -->
+         <div class="col-lg-4 col-md-6">
+            <div class="contact-method-card">
+               <div class="method-icon">
+                  <i class="fas fa-envelope-open-text"></i>
+               </div>
+               <h3>Send Us an Email</h3>
+               <p>For detailed inquiries, partnerships, or feedback</p>
+               <div class="method-details">
+                  <p><strong>General:</strong> info@momosrestaurant.com</p>
+                  <p><strong>Reservations:</strong> book@momosrestaurant.com</p>
+                  <p><strong>Catering:</strong> events@momosrestaurant.com</p>
+               </div>
+               <a href="" class="method-link">
+                  <i class="fas fa-paper-plane me-2"></i>Send Email
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Contact Form & Location -->
+<section class="contact-form-section section-padding">
+   <div class="container">
+      <div class="row g-5">
+         <!-- Contact Form -->
+         <div class="col-lg-6">
+            <div class="contact-form-wrapper">
+               <div class="section-header mb-4">
+                  <span class="section-subtitle">Send Message</span>
+                  <h2 class="section-title">Quick <span class="text-orange">E</span>nquiry</h2>
+                  <p class="section-description">We'll respond within 2 hours during business hours</p>
+               </div>
+               
+               <form id="contactForm" class="contact-form" method="post" action="{% url 'contact' %}">
+                  {% csrf_token %}
+                  <div class="row g-3">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="name" class="form-label">Full Name *</label>
+                           <input type="text" id="name" name="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="phone" class="form-label">Phone Number *</label>
+                           <input type="tel" id="phone" name="phone" class="form-control" placeholder="98XXXXXXXX" required>
+                           <span id="error_msg", style="color: red; display: none;">Invalid Phone Number</span>
+                           <div id="phone-error" class="error-message"></div>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="form-group">
+                           <label for="email" class="form-label">Email Address</label>
+                           <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com">
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="form-group">
+                           <label for="subject" class="form-label">Subject</label>
+                           <select id="subject" name="subject" class="form-select">
+                              <option value="">Select a subject</option>
+                              <option value="reservation">Table Reservation</option>
+                              <option value="catering">Catering Inquiry</option>
+                              <option value="feedback">Feedback/Suggestion</option>
+                              <option value="complaint">Complaint</option>
+                              <option value="partnership">Business Partnership</option>
+                              <option value="other">Other</option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="form-group">
+                           <label for="message" class="form-label">Your Message *</label>
+                           <textarea id="message" name="message" class="form-control" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="form-check mb-3">
+                           <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                           <label class="form-check-label" for="newsletter">
+                              Subscribe to our newsletter for updates and offers
+                           </label>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <button type="submit" id="submitBtn" class="btn btn-primary btn-lg w-100">
+                           <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </button>
+                        <div id="form-message" class="mt-3"></div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+         
+         <!-- Location & Hours -->
+         <div class="col-lg-6">
+            <div class="location-hours-wrapper">
+               <!-- Location Map -->
+               <div class="location-card mb-4">
+                  <div class="section-header mb-4">
+                     <span class="section-subtitle">Our Location</span>
+                     <h2 class="section-title">Find Us <span class="text-orange">E</span>asily</h2>
+                  </div>
+                  
+                  <div class="map-container">
+                     <div id="map"></div>
+                     <div class="map-overlay">
+                        <div class="map-info">
+                           <h5><i class="fas fa-map-marker-alt text-orange"></i> MOMOS Restaurant</h5>
+                           <p>Vyas-8, Tanahun, Nepal</p>
+                           <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-sm btn-outline">
+                              <i class="fas fa-directions me-1"></i>Open in Maps
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- Opening Hours -->
+               <div class="hours-card">
+                  <h3 class="mb-4">Opening Hours</h3>
+                  <div class="hours-table">
+                     <div class="hours-row">
+                        <span class="day">Monday - Thursday</span>
+                        <span class="time">10:00 AM - 10:00 PM</span>
+                     </div>
+                     <div class="hours-row">
+                        <span class="day">Friday - Saturday</span>
+                        <span class="time">10:00 AM - 11:00 PM</span>
+                     </div>
+                     <div class="hours-row">
+                        <span class="day">Sunday</span>
+                        <span class="time">10:00 AM - 10:00 PM</span>
+                     </div>
+                     <div class="hours-row holiday">
+                        <span class="day">Public Holidays</span>
+                        <span class="time">11:00 AM - 9:00 PM</span>
+                     </div>
+                  </div>
+                  
+                  <div class="current-status mt-4">
+                     <div class="status-indicator open">
+                        <i class="fas fa-circle"></i>
+                        <span>We are currently <strong>OPEN</strong></span>
+                     </div>
+                     <p class="mt-2">Last order for dine-in: 9:30 PM</p>
+                     <p>Last order for delivery: 9:00 PM</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+<!-- FAQ Section -->
+<section class="faq-section section-padding">
+   <div class="container">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Help Center</span>
+         <h2 class="section-title">Frequently Asked <span class="text-orange">Q</span>uestions</h2>
+         <p class="section-description">Quick answers to common questions</p>
+      </div>
+      
+      <div class="row">
+         <div class="col-lg-6">
+            <div class="accordion" id="faqAccordion">
+               <!-- FAQ 1 -->
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        What are your delivery hours and areas?
+                     </button>
+                  </h2>
+                  <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                     <div class="accordion-body">
+                        We deliver daily from 11:00 AM to 9:30 PM. Our delivery service covers Tanahun and surrounding areas within 5km radius. Delivery charges may apply based on distance.
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- FAQ 2 -->
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        Do you offer catering services for events?
+                     </button>
+                  </h2>
+                  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                     <div class="accordion-body">
+                        Yes, we provide professional catering services for all types of events - from small family gatherings to large corporate events. Contact our events team at events@momosrestaurant.com for customized menus and quotes.
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- FAQ 3 -->
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        Is parking available at your restaurant?
+                     </button>
+                  </h2>
+                  <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                     <div class="accordion-body">
+                        Yes, we have dedicated parking space for 15+ vehicles. Additional street parking is also available nearby. Valet parking service is available on weekends and special occasions.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+         <div class="col-lg-6">
+            <div class="accordion" id="faqAccordion2">
+               <!-- FAQ 4 -->
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        Do you have vegetarian and vegan options?
+                     </button>
+                  </h2>
+                  <div id="faq4" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion2">
+                     <div class="accordion-body">
+                        Absolutely! We have an extensive vegetarian menu and several vegan-friendly options. All our vegetable momos are vegan when ordered without the special sauce. Just inform our staff about your dietary preferences.
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- FAQ 5 -->
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                        Can I cancel or modify my reservation?
+                     </button>
+                  </h2>
+                  <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                     <div class="accordion-body">
+                        Yes, you can modify or cancel your reservation up to 2 hours before your booking time. Please call us directly or use the modification link in your confirmation email. For large group reservations, please notify us at least 24 hours in advance.
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- FAQ 6 -->
+               <div class="accordion-item">
+                  <h2 class="accordion-header">
+                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                        Do you accept credit cards and digital payments?
+                     </button>
+                  </h2>
+                  <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                     <div class="accordion-body">
+                        We accept all major credit cards (Visa, MasterCard), debit cards, and digital payments through eSewa, Khalti, and ConnectIPS. Cash payments are also accepted.
+                     </div>
+                  </div>
+               </div>
+            </div>
+            
+            <!-- Contact Support -->
+            <div class="support-card mt-4">
+               <div class="support-content">
+                  <h5>Still have questions?</h5>
+                  <p>Our customer support team is here to help you</p>
+                  <a href="" class="btn btn-primary">
+                     <i class="fas fa-headset me-2"></i>Call Support
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Emergency Contact -->
+<section class="emergency-contact section-padding bg-light">
+   <div class="container text-center">
+      <div class="emergency-content">
+         <i class="fas fa-exclamation-triangle emergency-icon"></i>
+         <h2 class="mb-3">Need Immediate Assistance?</h2>
+         <p class="mb-4">For urgent matters outside business hours, please contact:</p>
+         <div class="emergency-contact-info">
+            <a href="" class="btn btn-danger btn-lg">
+               <i class="fas fa-phone-alt me-2"></i>Emergency Contact: +977 9816107823
+            </a>
+         </div>
+         <p class="mt-3 text-muted">Available 24/7 for delivery orders and urgent inquiries</p>
+      </div>
+   </div>
+</section>
+
+<!-- CSS for Contact Page -->
+
+
+<!-- JavaScript for Contact Page -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+   // Phone number validation
+   const phoneInput = document.getElementById('phone');
+   const phoneError = document.getElementById('phone-error');
+   
+   if (phoneInput) {
+      phoneInput.addEventListener('input', function() {
+         const phone = this.value.replace(/\D/g, '');
+         if (phone.length < 7) {
+            phoneError.textContent = 'Phone number must be at least 7 digits';
+            phoneError.style.display = 'block';
+            phoneInput.classList.add('is-invalid');
+         } else if (phone.length > 10) {
+            phoneError.textContent = 'Phone number cannot exceed 10 digits';
+            phoneError.style.display = 'block';
+            phoneInput.classList.add('is-invalid');
+         } else {
+            phoneError.style.display = 'none';
+            phoneInput.classList.remove('is-invalid');
+         }
+      });
+   }
+   
+   // Set minimum date for reservation
+   const reservationDate = document.getElementById('reservationDate');
+   if (reservationDate) {
+      const today = new Date().toISOString().split('T')[0];
+      reservationDate.min = today;
+      
+      // Set default to tomorrow
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      reservationDate.value = tomorrow.toISOString().split('T')[0];
+   }
+   
+   // Contact form submission
+   const contactForm = document.getElementById('contactForm');
+   if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+         e.preventDefault();
+         
+         const submitBtn = document.getElementById('submitBtn');
+         const formMessage = document.getElementById('form-message');
+         
+         // Validate phone
+         const phone = phoneInput.value.replace(/\D/g, '');
+         if (phone.length < 7 || phone.length > 10) {
+            formMessage.innerHTML = '<div class="alert alert-danger">Please enter a valid phone number</div>';
+            return;
+         }
+         
+         // Disable submit button
+         submitBtn.disabled = true;
+         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
+         
+         // Simulate form submission
+         setTimeout(() => {
+            formMessage.innerHTML = `
+               <div class="alert alert-success">
+                  <i class="fas fa-check-circle me-2"></i>
+                  Thank you! Your message has been sent. We'll contact you within 2 hours.
+               </div>
+            `;
+            contactForm.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message';
+            
+            // Scroll to message
+            formMessage.scrollIntoView({ behavior: 'smooth' });
+         }, 1500);
+      });
+   }
+   
+   // Reservation form submission
+   const reservationForm = document.getElementById('reservationForm');
+   if (reservationForm) {
+      reservationForm.addEventListener('submit', function(e) {
+         e.preventDefault();
+         
+         const formData = new FormData(this);
+         const reservationDetails = {
+            name: formData.get('name') || document.querySelector('#reservationForm input[placeholder="Full Name"]').value,
+            date: formData.get('date') || document.getElementById('reservationDate').value,
+            guests: formData.get('guests') || document.querySelector('#reservationForm select').value,
+            time: formData.get('time') || document.querySelector('#reservationForm select').value
+         };
+         
+         // Send to WhatsApp
+         const message = `📅 *New Table Reservation*\n\n` +
+                        `*Name:* ${reservationDetails.name}\n` +
+                        `*Date:* ${reservationDetails.date}\n` +
+                        `*Time:* ${reservationDetails.time}\n` +
+                        `*Guests:* ${reservationDetails.guests}\n\n` +
+                        `Please confirm this reservation.`;
+         
+         const phone = '9816107823';
+         const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+         window.open(url, '_blank');
+         
+         // Show success message
+         alert('Reservation request sent! Please check WhatsApp for confirmation.');
+         reservationForm.reset();
+         
+         // Reset date to tomorrow
+         if (reservationDate) {
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            reservationDate.value = tomorrow.toISOString().split('T')[0];
+         }
+      });
+   }
+   
+   // Initialize simple map (using Google Maps iframe)
+   const mapContainer = document.getElementById('map');
+   if (mapContainer) {
+      mapContainer.innerHTML = `
+         <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0324881575643!2d85.34297441506196!3d27.721469282190232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1bda4a951f0f%3A0x3ddabb234891c3bd!2sBuddha%20Stupa!5e0!3m2!1sen!2snp!4v1713623524286!5m2!1sen!2snp" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+         </iframe>
+      `;
+   }
+   
+   // Update current status
+   function updateCurrentStatus() {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMinute = now.getMinutes();
+      
+      // Check if we're open (10:00 AM - 10:00 PM)
+      const isOpen = (currentHour > 10 || (currentHour === 10 && currentMinute >= 0)) && 
+                     (currentHour < 22 || (currentHour === 22 && currentMinute <= 0));
+      
+      const statusElement = document.querySelector('.current-status .status-indicator');
+      if (statusElement) {
+         if (isOpen) {
+            statusElement.className = 'status-indicator open';
+            statusElement.innerHTML = '<i class="fas fa-circle"></i><span>We are currently <strong>OPEN</strong></span>';
+         } else {
+            statusElement.className = 'status-indicator closed';
+            statusElement.innerHTML = '<i class="fas fa-circle"></i><span>We are currently <strong>CLOSED</strong></span>';
+         }
+      }
+   }
+   
+   updateCurrentStatus();
+   setInterval(updateCurrentStatus, 60000); // Update every minute
+});
+
+// WhatsApp click tracking
+document.addEventListener('click', function(e) {
+   if (e.target.closest('[href*="whatsapp.com"]') || e.target.closest('[href*="wa.me"]')) {
+      // You can add analytics tracking here
+      console.log('WhatsApp contact initiated');
+   }
+});
+</script>
+{% endblock content %}

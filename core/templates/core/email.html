@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+
+<body style="
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+">
+
+    <div style="
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    ">
+
+        <!-- Header -->
+        <div style="
+            background-color: #0d6efd;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        ">
+            <h1 style="margin: 0; font-size: 28px;">
+                Welcome to Our Website
+            </h1>
+        </div>
+
+        <!-- Content -->
+        <div style="padding: 30px; color: #333333;">
+
+            <h2>Hello {{ username }},</h2>
+
+            <p style="font-size: 16px; line-height: 1.6;">
+                Thank you for registering with us.
+                Your account has been successfully created.
+            </p>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{ login_url }}"
+                   style="
+                       background-color: #0d6efd;
+                       color: #ffffff;
+                       padding: 12px 25px;
+                       text-decoration: none;
+                       border-radius: 6px;
+                       display: inline-block;
+                       font-weight: bold;
+                   ">
+                    Login Now
+                </a>
+            </div>
+
+            <p style="font-size: 14px; color: #777777;">
+                If you did not create this account, you can safely ignore
+                this email.
+            </p>
+
+        </div>
+
+        <!-- Footer -->
+        <div style="
+            background-color: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #777777;
+            font-size: 13px;
+        ">
+            © 2026 Your Website. All rights reserved.
+        </div>
+
+    </div>
+
+</body>
+</html>

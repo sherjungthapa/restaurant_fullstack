@@ -1,0 +1,442 @@
+
+/* .contact-hero {
+   background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.8)), url('{% static "images/contact-bg.jpg" %}');
+   background-size: cover;
+   background-position: center;
+} */
+
+.quick-contact {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.quick-contact-item {
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   color: var(--white);
+   opacity: 0.9;
+}
+
+.quick-contact-item i {
+   color: var(--primary-color);
+   font-size: 20px;
+   width: 24px;
+}
+
+.quick-contact-item h6 {
+   margin: 0;
+   font-size: 14px;
+   opacity: 0.8;
+}
+
+.quick-contact-item a, 
+.quick-contact-item p {
+   color: var(--white);
+   margin: 0;
+   font-weight: 600;
+   text-decoration: none;
+}
+
+.quick-contact-item a:hover {
+   color: var(--primary-color);
+}
+
+.hero-buttons .btn-success {
+   background: #25D366;
+   border-color: #25D366;
+}
+
+.hero-buttons .btn-success:hover {
+   background: #128C7E;
+   border-color: #128C7E;
+}
+
+/* Contact Method Cards */
+.contact-method-card {
+   background: white;
+   padding: 30px;
+   border-radius: 15px;
+   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+   height: 100%;
+   text-align: center;
+   transition: transform 0.3s ease;
+   border-top: 4px solid var(--primary-color);
+}
+
+.contact-method-card:hover {
+   transform: translateY(-10px);
+   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.method-icon {
+   width: 80px;
+   height: 80px;
+   background: linear-gradient(135deg, var(--primary-color), #ff8c5a);
+   color: white;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 0 auto 20px;
+   font-size: 32px;
+}
+
+.contact-method-card h3 {
+   font-size: 22px;
+   font-weight: 700;
+   margin-bottom: 15px;
+   color: var(--secondary-color);
+}
+
+.contact-method-card p {
+   color: #666;
+   margin-bottom: 20px;
+   line-height: 1.6;
+}
+
+.method-details {
+   text-align: left;
+   background: #f8f9fa;
+   padding: 15px;
+   border-radius: 10px;
+   margin-bottom: 20px;
+}
+
+.method-details p {
+   margin-bottom: 8px;
+   font-size: 14px;
+}
+
+.method-details p:last-child {
+   margin-bottom: 0;
+}
+
+.method-link {
+   display: inline-flex;
+   align-items: center;
+   color: var(--primary-color);
+   text-decoration: none;
+   font-weight: 600;
+   transition: all 0.3s ease;
+}
+
+.method-link:hover {
+   color: #d45a2a;
+   gap: 10px;
+}
+
+.method-actions {
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   flex-wrap: wrap;
+}
+
+/* Contact Form */
+.contact-form-wrapper {
+   background: white;
+   padding: 40px;
+   border-radius: 15px;
+   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+   margin-bottom: 20px;
+}
+
+.form-label {
+   font-weight: 600;
+   margin-bottom: 8px;
+   color: var(--secondary-color);
+   display: block;
+}
+
+.form-control,
+.form-select {
+   padding: 12px 15px;
+   border: 2px solid #e9ecef;
+   border-radius: 8px;
+   font-size: 14px;
+   transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+   border-color: var(--primary-color);
+   box-shadow: 0 0 0 3px rgba(247, 109, 55, 0.1);
+   outline: none;
+}
+
+.error-message {
+   color: #dc3545;
+   font-size: 12px;
+   margin-top: 5px;
+   display: none;
+}
+
+.form-check-label {
+   font-size: 14px;
+   color: #666;
+}
+
+#form-message {
+   font-size: 14px;
+   text-align: center;
+}
+
+/* Map Container */
+.map-container {
+   position: relative;
+   border-radius: 15px;
+   overflow: hidden;
+   height: 350px;
+   margin-bottom: 20px;
+}
+
+#map {
+   width: 100%;
+   height: 100%;
+   background: #f0f0f0;
+}
+
+.map-overlay {
+   position: absolute;
+   bottom: 20px;
+   left: 20px;
+   right: 20px;
+   background: rgba(255, 255, 255, 0.95);
+   padding: 15px;
+   border-radius: 10px;
+   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map-info h5 {
+   margin-bottom: 5px;
+   color: var(--secondary-color);
+}
+
+.map-info p {
+   color: #666;
+   margin-bottom: 10px;
+   font-size: 14px;
+}
+
+/* Hours Card */
+.hours-card {
+   background: white;
+   padding: 30px;
+   border-radius: 15px;
+   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.hours-table {
+   margin-bottom: 20px;
+}
+
+.hours-row {
+   display: flex;
+   justify-content: space-between;
+   padding: 12px 0;
+   border-bottom: 1px solid #eee;
+}
+
+.hours-row:last-child {
+   border-bottom: none;
+}
+
+.hours-row.holiday {
+   background: #fff9e6;
+   margin: 0 -30px;
+   padding: 12px 30px;
+}
+
+.day {
+   font-weight: 600;
+   color: var(--secondary-color);
+}
+
+.time {
+   color: var(--primary-color);
+   font-weight: 600;
+}
+
+.current-status {
+   padding: 15px;
+   background: #f8f9fa;
+   border-radius: 10px;
+}
+
+.status-indicator {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   font-weight: 600;
+}
+
+.status-indicator.open i {
+   color: #28a745;
+}
+
+.status-indicator.closed i {
+   color: #dc3545;
+}
+
+/* Reservation Form */
+.reservation-form {
+   background: rgba(255, 255, 255, 0.05);
+   padding: 40px;
+   border-radius: 15px;
+   backdrop-filter: blur(10px);
+}
+
+.reservation-tips {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+.tip-item {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   color: rgba(255, 255, 255, 0.8);
+   font-size: 14px;
+}
+
+.tip-item i {
+   color: var(--primary-color);
+}
+
+/* FAQ Section */
+.accordion-button {
+   font-weight: 600;
+   padding: 15px;
+   background: white;
+   border: none;
+   box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+   background: var(--primary-color);
+   color: white;
+   box-shadow: none;
+}
+
+.accordion-button:focus {
+   box-shadow: none;
+   border-color: rgba(0,0,0,0.125);
+}
+
+.accordion-body {
+   padding: 20px;
+   background: #f8f9fa;
+   font-size: 14px;
+   line-height: 1.6;
+}
+
+.support-card {
+   background: linear-gradient(135deg, var(--primary-color), #ff8c5a);
+   color: white;
+   padding: 30px;
+   border-radius: 15px;
+   text-align: center;
+}
+
+.support-content h5 {
+   font-size: 20px;
+   margin-bottom: 10px;
+}
+
+.support-content p {
+   opacity: 0.9;
+   margin-bottom: 20px;
+}
+
+.support-content .btn {
+   background: white;
+   color: var(--primary-color);
+   border: none;
+}
+
+.support-content .btn:hover {
+   background: #f8f9fa;
+}
+
+/* Emergency Contact */
+.emergency-icon {
+   font-size: 48px;
+   color: #dc3545;
+   margin-bottom: 20px;
+}
+
+.emergency-content h2 {
+   color: var(--secondary-color);
+}
+
+.btn-danger {
+   background: #dc3545;
+   border-color: #dc3545;
+   padding: 15px 30px;
+   font-size: 18px;
+}
+
+.btn-danger:hover {
+   background: #c82333;
+   border-color: #bd2130;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+   .contact-hero .hero-content {
+      text-align: center;
+   }
+   
+   .quick-contact-item {
+      justify-content: center;
+   }
+   
+   .hero-buttons {
+      flex-direction: column;
+   }
+   
+   .contact-form-wrapper,
+   .hours-card,
+   .contact-method-card {
+      padding: 25px;
+   }
+   
+   .map-container {
+      height: 250px;
+   }
+   
+   .reservation-form {
+      padding: 25px;
+   }
+   
+   .hours-row {
+      flex-direction: column;
+      gap: 5px;
+   }
+}
+
+@media (max-width: 576px) {
+   .contact-method-card {
+      margin-bottom: 30px;
+   }
+   
+   .method-actions {
+      flex-direction: column;
+      width: 100%;
+   }
+   
+   .method-actions .btn {
+      width: 100%;
+   }
+   
+   .emergency-contact .btn-lg {
+      font-size: 16px;
+      padding: 12px 20px;
+   }
+}

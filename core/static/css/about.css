@@ -1,0 +1,312 @@
+
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('../images/about-img.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    padding: 120px 0 80px;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.about-hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* Story Section */
+.story-section {
+    background: var(--light-bg);
+    padding: 100px 0;
+}
+
+/* Our Story Card */
+.story-card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+}
+
+.story-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-image img {
+    transform: scale(1.1);
+}
+
+.story-content {
+    padding: 30px;
+}
+
+.story-content h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.story-content p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Values Section */
+.values-section {
+    background: var(--dark-bg);
+    color: var(--white);
+    padding: 100px 0;
+}
+
+.value-item {
+    text-align: center;
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.value-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-color);
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.value-item h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.value-item p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Team Section */
+.team-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.team-card {
+    text-align: center;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.team-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 25px 20px;
+}
+
+.team-info h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.team-info p {
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.team-info .bio {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Milestones Section */
+.milestones-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/milestone-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.milestone-item {
+    padding: 30px 20px;
+}
+
+.milestone-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.milestone-text {
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Mission Section */
+.mission-section {
+    padding: 100px 0;
+    background: var(--light-bg);
+}
+
+.mission-content {
+    background: var(--white);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-icon {
+    font-size: 60px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+}
+
+.mission-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.mission-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Responsive Styles for About Page */
+@media (max-width: 991px) {
+    .about-hero h1 {
+        font-size: 38px;
+    }
+    
+    .about-hero p {
+        font-size: 16px;
+    }
+    
+    .mission-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-hero {
+        padding: 100px 0 60px;
+        min-height: 40vh;
+    }
+    
+    .about-hero h1 {
+        font-size: 32px;
+    }
+    
+    .story-section,
+    .values-section,
+    .team-section,
+    .mission-section {
+        padding: 60px 0;
+    }
+    
+    .milestone-number {
+        font-size: 36px;
+    }
+    
+    .milestone-text {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    .about-hero h1 {
+        font-size: 28px;
+    }
+    
+    .mission-content {
+        padding: 25px;
+    }
+    
+    .mission-icon {
+        font-size: 50px;
+    }
+}
+
+/* Fix for body padding to account for fixed navbar */
+body {
+    padding-top: 80px;
+}

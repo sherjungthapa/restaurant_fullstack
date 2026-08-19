@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Testimonials Hero -->
+<section class="testimonials-hero hero-section">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6 col-md-12">
+            <div class="hero-content">
+               <span class="hero-subtitle">Customer Stories</span>
+               <h1 class="hero-title">
+                  Real Stories from<br>
+                  <span class="text-orange">M</span>omos Lovers
+               </h1>
+               <p class="hero-description">
+                  Discover what our customers say about their authentic Nepalese dining experience. 
+                  From first-time visitors to regulars, hear their stories.
+               </p>
+               <div class="hero-stats mt-4">
+                  <div class="row">
+                     <div class="col-4">
+                        <div class="stat-item">
+                           <h3>4.8★</h3>
+                           <p>Average Rating</p>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <div class="stat-item">
+                           <h3>500+</h3>
+                           <p>Reviews</p>
+                        </div>
+                     </div>
+                     <div class="col-4">
+                        <div class="stat-item">
+                           <h3>98%</h3>
+                           <p>Would Recommend</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6 col-md-12">
+            <div class="hero-image">
+               <img src="{% static 'images/testimonials-hero.jpg' %}" alt="Happy customers enjoying momos" class="img-fluid">
+               <div class="floating-badge">
+                  <span>⭐</span>
+                  <small>Rated Excellent</small>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- Featured Testimonials -->
+<section class="featured-testimonials section-padding bg-light">
+   <div class="container">
+      <div class="section-header text-center mb-5">
+         <span class="section-subtitle">Featured Reviews</span>
+         <h2 class="section-title">What Makes Us <span class="text-orange">D</span>ifferent</h2>
+         <p class="section-description">Hear from our most loyal customers</p>
+      </div>
+      
+      <div class="row g-4">
+         <!-- Featured Testimonial 1 -->
+          {% for i in review %}
+          <div class="col-lg-4 col-md-6">
+            <div class="testimonial-card featured">
+               <div class="testimonial-header">
+                  <div class="author-info">
+                     <img src="{% static 'images/customer1.jpg' %}" alt="Sujan Thadarai" class="author-img">
+                     <div>
+                        <h5>{{i.name}}</h5>
+                        <span>Regular Customer • 50+ Visits</span>
+                     </div>
+                  </div>
+                  <div class="rating">
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                     <i class="fas fa-star"></i>
+                  </div>
+               </div>
+               <p class="testimonial-text">{{i.message}}
+               </p>
+               <div class="testimonial-footer">
+                  <span class="badge bg-primary">Most Helpful Review</span>
+                  <small>Visited 2 days ago</small>
+               </div>
+            </div>
+         </div>   
+          {% endfor %}
+        
+      </div>
+   </div>
+</section>
+
+
+<!-- Add Your Review -->
+<section class="add-review section-padding bg-dark text-white">
+   <div class="container">
+      <div class="row align-items-center">
+         <div class="col-lg-6">
+            <div class="review-content">
+               <h2 class="section-title">Share Your <span class="text-orange">E</span>xperience</h2>
+               <p>We value your feedback! Share your dining experience with us and help others discover authentic Nepalese cuisine.</p>
+               <div class="review-benefits">
+                  <div class="benefit-item">
+                     <i class="fas fa-gift"></i>
+                     <span>Get 10% off on next visit</span>
+                  </div>
+                  <div class="benefit-item">
+                     <i class="fas fa-crown"></i>
+                     <span>Become a VIP member</span>
+                  </div>
+                  <div class="benefit-item">
+                     <i class="fas fa-star"></i>
+                     <span>Featured on our website</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="review-form">
+               <h3 class="mb-4">Leave a Review</h3>
+               <form method="post" action="{% url 'testemonial' %}">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                     <label class="form-label">Your Rating</label>
+                     <div class="rating-input">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                     </div>
+                     <input type="hidden" id="ratingValue" name="rating" value="5">
+                  </div>
+                  <div class="mb-3">
+                     <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="mb-3">
+                     <textarea class="form-control" name="message" rows="4" placeholder="Your review..." required></textarea>
+                  </div>
+                  <div class="mb-3">
+                     <select class="form-select" name="order">
+                        <option value="">What did you order?</option>
+                        {% for i in momo %}
+                        <option value="{{i.name}}">{{i.name}}</option>  
+                        {% endfor %}
+
+                     </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Submit Review</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+<!-- JavaScript for Rating System -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+   const stars = document.querySelectorAll('.rating-input i');
+   const ratingInput = document.getElementById('ratingValue');
+   
+   stars.forEach(star => {
+      star.addEventListener('click', function() {
+         const rating = this.getAttribute('data-rating');
+         ratingInput.value = rating;
+         
+         stars.forEach(s => {
+            s.classList.remove('fas');
+            s.classList.add('far');
+         });
+         
+         for (let i = 0; i < rating; i++) {
+            stars[i].classList.remove('far');
+            stars[i].classList.add('fas');
+         }
+      });
+      
+      star.addEventListener('mouseover', function() {
+         const rating = this.getAttribute('data-rating');
+         
+         stars.forEach(s => {
+            s.classList.remove('fas');
+            s.classList.add('far');
+         });
+         
+         for (let i = 0; i < rating; i++) {
+            stars[i].classList.remove('far');
+            stars[i].classList.add('fas');
+         }
+      });
+   });
+   
+   const form = document.getElementById('reviewForm');
+   form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your review! You will receive 10% off on your next visit.');
+      form.reset();
+      stars.forEach(s => {
+         s.classList.remove('fas');
+         s.classList.add('far');
+      });
+      stars[4].classList.remove('far');
+      stars[4].classList.add('fas');
+      ratingInput.value = '5';
+   });
+});
+</script>
+
+
+{% endblock content %}

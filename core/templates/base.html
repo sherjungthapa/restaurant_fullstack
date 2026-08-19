@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <!-- basic -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO Meta Tags -->
+    <title>MOMOS Restaurant</title>
+    <meta name="description"
+        content="Experience authentic Nepalese momos made with fresh ingredients and traditional recipes. Best momo restaurant with dine-in, takeaway, and catering services.">
+    <meta name="keywords"
+        content="momos, nepalese food, dumplings, authentic momos, restaurant, catering, asian cuisine">
+    <meta name="author" content="MOMOS Restaurant">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="{% static 'images/favicon_io/favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/css/intlTelInput.css">
+
+    <!-- Bootstrap -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block css %}
+
+    {% endblock css %}
+
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg new_navbar bg-transparent">
+            <div class="container nav-container">
+                <a class="navbar-brand brand-logo" href="{% url 'index' %}">
+                    <span class="logo-icon">🥟</span>
+                    <b>M</b>OMOS
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Menu -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/' %}
+                            Active
+                            {% endif %}" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link{% if request.path == '/about/' %}
+                            Active
+                            {% endif %}" href="{% url 'about' %}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/menu/' %}
+                            Active
+                            {% endif %}" href="{% url 'menu' %}">Our Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/service/' %}
+                            Active
+                            {% endif %}" href="{% url 'service' %}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/testimonial/' %}
+                            Active
+                            {% endif %}" href="{% url 'testemonial' %}">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == '/contact/' %}
+                            Active
+                            {% endif %}" href="{% url 'contact' %}">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- Order Now Button -->
+
+                    <!-- <a href="http://wa.me/9816641753?text=Hi,%20happy%20i%20need%20mom" target="_blank" -->
+                    <!-- class="order-btn ms-4">
+                        <i class="fas fa-phone-alt me-2"></i> Order Now -->
+                    <!-- </a> -->
+                    <div>
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'log_out' %}"><button class="btn btn-danger">Logout</button></a>
+                        {% else %}
+                        <a href="{% url 'log_in' %}"><button class="btn btn-success">Login</button></a>
+                        <a href="{% url 'register' %}"><button class="btn btn-warning">Register</button></a>
+
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-widget">
+                        <a href="#" class="footer-logo">
+                            <span>🥟</span>
+                            <b>M</b>OMOS
+                        </a>
+                        <p class="footer-description">
+                            Bringing authentic Nepalese flavors to your table since 2008.
+                            Experience the taste of Himalayas.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <div class="footer-widget">
+                        <h5>Quick Links</h5>
+                        <ul class="footer-links">
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="{% url 'terms' %}">Terms and policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5>Contact Info</h5>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Gajaharkot-2, Tanahun, Nepal
+                            </li>
+                            <a href="tel:9816647153">
+                                <li>
+                                    <i class="fas fa-phone-alt"></i>
+                                    +977 9816647153
+                                </li>
+                            </a>
+                            <a href="mailto:magar.yuchi@gmail.com">
+                                <li>
+                                    <i class="fas fa-envelope"></i>
+                                    magar.yuchi@gmail.com
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-widget">
+                        <h5>Newsletter</h5>
+                        <p>Subscribe for updates and special offers</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your Email" required>
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">
+                            &copy; 2026 MOMOS Restaurant. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="payment-methods">
+                            <span>We Accept:</span>
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- int tel -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.2.2/dist/js/intlTelInput.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+
+</body>
+
+</html>
