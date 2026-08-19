@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 import re
 from django.template.loader import render_to_string
-from django.core.mail import send_mail,EmailMessage
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -34,18 +34,13 @@ def index(request):
         email=request.POST['email']
         message=request.POST['message']
         Form.objects.create(name=name,email=email,phone=phone,message=message)
+
+        # send mail
         subject = "Welcome to Our Website"
+        message =''
         from_email="magar.yuchi@gmail.com"
-        
-
-        html_content = render_to_string(
-        "emails/welcome_email.html",
-        {
-            "username": name,
-            "login_url": "https/example.com/login/",
-        })
-        send_mail(subject=subject,message=html_content,from_email=from_email,recipient_list=[email])
-
+        recipient_list =[email]
+        send_mail(subject=subject,message=message,from_email=from_email,recipient_list=recipient_list,html_message=render_to_string('core/email.html',{'username':name}))
 
         
         response= redirect('index')
